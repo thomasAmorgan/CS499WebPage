@@ -62,29 +62,119 @@
     </div>
 
     <div class="container">
-      <h3>General Gameplay</h3>
-      <p>TENTATIVE</p>
+    	<p>TENTATIVE</p>
 
-      <p>In its first state, this game will be a "hot seat" game. (A hot seat game is a game played by multiple people using one computer.) The minimum viable product for this game in priority order are as follows:
-      </p>
-      <h5>A Serviceable UI</h5>
-      <ul>
-        <li>A two-dimensional hexagonal grid play space</li>
-        <li>A representation for pieces on the board</li>
-        <li>A player turn order indicator</li>
-        <li>An action point indicator</li>
-        <li>A representation of cards</li>
-        <li>Correct user interaction with all elements</li>
-      </ul>
+    	<h3>General Requirements</h3>
+    	<ul>
+    		<li>The game will be played through an Internet Browser - Chrome, Firefox, Internet
+    			Explorer/Edge (potentially) and other compatible Browsers over the Internet. Should work with any operating system that has Java version 8 installed.</li>
+    		<li>The game will be played through the use of a mouse or other pointing device.</li>
+    		<li>The first stage of the game will be as a "hotseat" game - multiple persons
+    			take turns using a single computer to play the game. The first stretch goal
+    			(under Stretch Goals) is to have the game playable across multiple browsers.</li>
+    		<li>For all elements of the game not specifically mentioned, assume that the requirements
+    			follow directly what is outlined in the game rules (eg, rules for how many hexes a
+    			particular Bot can move, combat values for Bots, card effects, etc.)</li>
+    	</ul>
 
-      <h5>Rule Algorithms</h5>
-      <ul>
-        <li>Implementation of rules for combat and movement</li>
-        <li>Implementation of rules for game startup</li>
-        <li>Implementation of rules for board manipulation</li>
-        <li>Implementation of rules for player actions</li>
-        <li>Implementation of rules for card actions</li>
-      </ul>
+    	<h3>User Interface - General Requirements</h3>
+    	<ul>
+    		<li>A two-dimensional hexagonal grid play space must be visible.</li>
+    		<li>Users must be able to understand which elements are on which hexes;
+    			eg, Bots, Power Disks, Force Fields and Destroyed Hexes.</li>
+    		<li>A player turn order indicator must be accessible.</li>
+    		<li>An action point indicator must be accessible.</li>
+    		<li>An interface for viewing and playing cards at appropriate times must be
+    			available.</li>
+    		<li>Players must be able to use the interface to interact with the game as
+    			specified under User Interface - Setting up and User Interface - General
+    			Gameplay.</li>
+    	</ul>
+
+    	<h3>User Interface - Setting Up</h3>
+    	<ul>
+    		<li>Players must be able to validly place a combined total of 20 hex grids distributed
+    			as evenly as possible.</li>
+    		<li>Players must receive three random starting cards.</li>
+    		<li>Players must be able to place their starting pieces (one of each type of Bot)
+    			on any valid location.</li>
+    		<li>Power Disks, one for each player, must be placed on the game board in
+    			random locations.</li>
+    	</ul>
+
+    	<h3>User Interface - General Gameplay</h3>
+    	<ul>
+    		<li>Initiative Phase - turn order is randomly determined and displayed for each round.</li>
+    		<li>A player, on his or her turn, must be able to do the following:
+    			<ul>
+    			<li>Before all else, have the option to create a Power Disk on a random hex.</li>
+    			<li>Use a total of 3 action points (AP) to perform any combination of the following actions:
+    				<ul>
+    				<li>Destroy a random hex - 1 AP</li>
+    				<li>Warp a random grid - 1 AP</li>
+    				<li>Draw a card - 1 AP</li>
+    				<li>Rotate a grid - 1 AP</li>
+    				<li>Convert any or all Power Disks - 1 AP</li>
+    				<li>Warp their Converter Bot to the center of a random grid - 1 AP</li>
+    				<li>Move and engage in combat for any or all Bots - 2 AP</li>
+    				<li>Play any or all cards - 2 AP</li>
+    				<li>Warp any playing piece (aside from Converters) to a random location - 2 AP</li>
+    				<li>Double Warp (swap a selected grid with a random grid) - 2 AP</li>
+    				<li>Swap any two selected grids - 3 AP</li>
+    				<li>Warp friendly playing piece to any friendly or unoccupied hex - 3 AP</li>
+    				</ul>
+    			<li>These actions are discussed in the game rules, and their implementation will be no different
+    				than described.</li>
+    			</li>
+    			</ul>
+    		</li>
+    		<li>Users must be able to clearly see and understand the indicators for rotating and
+    			placing grids.</li>
+    	</ul>
+
+    	<h3>User Interface - Movement and Combat</h3>
+    	<ul>
+    		<li>Users must be able to clearly see and understand the indicators for Bot movement.</li>
+    		<li>An interface must be provided for combat which allows for the following:
+    			<ul>
+    			<li>Before combat, the redistribution of Power Disks among allied Bots for each side
+    				(attacker first).</li>
+    			<li>Special handling for if a force field is present in the combat hex.</li>
+    			<li>The player with the most Bots in a particular combat (defender for ties) to choose which
+    				Bots engage each other.</li>
+    			<li>Visible results of the random combat rolls.</li>
+    			<li>Playing of Combat Cards before the random rolls are cast.</li>
+    			</ul>
+    		</li>
+    	</ul>
+
+    	<h3>Game Rules - General Requirements</h3>
+    	<ul>
+    		<li>Combat and Movement must be implemented as specified in the game rules.
+    			<ul>
+    			<li>Players must be disallowed from making invalid moves.</li>
+    			</ul>
+    		</li>
+    		<li>Players must only be able to play cards at appropriate times - during combat for
+    			combat cards, and after spending two AP's to play any or all cards for special
+    			cards.</li>
+    		<li>Players must be removed from gameplay after their Converter Bot is destroyed.
+    			This includes removing all other units which the player previously controlled.
+    			Any cards which the defeated player held must be transferred to the player which
+    			destroyed the C-Bot.</li>
+    	</ul>
+
+    	<h3>Stretch Goals</h3>
+    	<ul>
+    		<li>Internet-enabled multiplayer - Allowing players to play the game together through
+    			multiple computers connected via the Internet.</li>
+    		<li>Alternative Game Modes - Game modes specified in the end of the game rules,
+    			selectable at the start of a game.</li>
+    		<li>UI Facelift - Improving the quality of the UI from simply functional to enjoyable
+    			to look at and use.</li>
+    		<li>Game Testing - Having volunteers test and play the game, offering feedback and
+    			improvements which could enhance the game's look or play.
+    	</ul>
 
     </div>
 
