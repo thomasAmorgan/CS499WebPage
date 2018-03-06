@@ -8,6 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style media="screen">
+      img {
+        padding: 10px;
+        margin: 10px;
+        height: 95%;
+        width: 95%;
+      }
+      b {
+        font-size: 1.25rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -78,6 +89,201 @@
         <p>
           Warp Arena will work on most if not all modern web browsers (i.e. Chrome, Safari, Firefox, Edge) and by extension should work on Windows, Mac, and Linux. It will be written using Javascript, HTML, CSS. We will also be using the Javascript framework named PIXI.js to help us implement the graphical components of the game. We will also use a git repository called Honeycomb created by flauekeul to help build the skeleton of our hexmap. Honeycomb provided several functions for creating, interacting, and manipulating a hexagonal grid system.
         </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>3.3 Module Description and Data Flow</h3>
+
+      <div class="container">
+        The following are various module descriptions:
+      </div>
+
+      <div class="container">
+        <b>Round Start Procedure</b>
+        <p>
+          Initiative Phase
+          <ul>
+            <li>Machine Roles 4 Random Numbers</li>
+            <li>Each Number is assigned to each player</li>
+            <li>The player with the largest number goes first</li>
+          </ul>
+
+          <b>Player Turn Start</b>
+          <ul>
+            <li>Create Power Node
+              <ul>
+                <li>Machine Prompts Player to create a Power Disc</li>
+                <li>~Player Confirms whether they would like to create a Power Disc
+            		If yes,</li>
+                  <ul>
+                    <li>Machine Chooses a random Hex and Grid</li>
+                    <li>Machine Updates the Power Disc counter</li>
+                    <li>Machine Updates the tile's graphic</li>
+                  </ul>
+                <li>Machine Calls the Player Turn Screen</li>
+              </ul>
+            </li>
+            <li>*** Some of the Player Actions are identical to the Action Card, so I won't include them here.</li>
+            <br>
+            <li>Remove a skill point - Since these are player actions, these are done with skill points</li>
+              <ul>
+                <li>Function Calls Remove a skill</li>
+                <li>Machine Calls the current players number</li>
+                <li>Machine decrements that player's Action points by 1</li>
+              </ul>
+            <li>Draw a Card</li>
+              <ul>
+                <li>Function calls the "Draw a Card" Action</li>
+              </ul>
+          </ul>
+        </p>
+      </div>
+
+      <div class="container">
+        <b>Card Functions</b>
+        <p>
+          <b>Card Remove - //Called after each card is played.</b>
+          <ul>
+            <li>Machine Calls the used card's hand ID number (Or however we identify cards in hand)</li>
+            <li>Machine Removes that card from the hand (however that works visually)</li>
+          </ul>
+
+          <b>Destroy Hex</b>
+          <ul>
+            <li>Function calls a "Destroy Hex" Action </li>
+            <li>Grid Selection Screen appears</li>
+            <li>Grid Confirmation Button Appears</li>
+            <li>~User chooses a Grid</li>
+            <li>~User confirms Grid</li>
+            <li>Machine chooses a random Hex</li>
+            <li>Chosen Hex changes its destroyed boolean to true</li>
+            <li>Hex deletes all entities on itself</li>
+            <li>Hex changes its appearance to destroyed</li>
+            <li>Grid Selection Screen disappears</li>
+          </ul>
+
+          <b>Warp Grid</b>
+          <ul>
+            <li>Function plays a "Warp Grid" Action </li>
+            <li>Grid Selection Screen appears</li>
+            <li>Machine chooses a Grid</li>
+            <li>~Player chooses a new location for the Grid</li>
+            <li>Grid Confirmation Button appears</li>
+            <li>Machine checks if the new location is valid</li>
+            <ul>
+              <li>If available, Grid glows green (or some other indicator of good)</li>
+              <ul>
+                <li>Confirmation Button becomes clickable</li>
+              </ul>
+              <li>If unavailable, Grid glows red (or some other indicator of wrong)</li>
+              <ul>
+                <li>Confirmation Button appears greyed out and unclickable</li>
+              </ul>
+            </ul>
+            <li>Two directional buttons appear</li>
+            <li>~Player Rotates the Grid</li>
+            <li>~Player confirms the Grid selection</li>
+            <li>Each Hex of the Grid is copied to the corresponding Hex in the new Grid</li>
+            <li>The old Grid is erased and set to empty</li>
+            <li>The Grid Selection Screen disappears</li>
+          </ul>
+
+          <b>Double Warp</b>
+          <ul>
+            <li>Function Calls a "Double Warp" Card</li>
+            <li>Grid Selection Screen Appears</li>
+            <li>~Player Chooses a Grid</li>
+            <li>~Player Confirms Selection</li>
+            <li>Machine Selects Another Grid</li>
+            <li>*** Im not entirely sure what the best way to handle this data, as you need to turn the grid somehow, </li>
+            <ul>
+              <li>If the data is moved fast enough, we could simply update each hex as they turn it</li>
+              <li>If the data movement is too slow, a secondary option will need to be explored</li>
+            </ul>
+            <li>Machine Saves the Second Grid</li>
+            <li>Machine Copies the First Grid to the Second Grid</li>
+            <li>Machine Copies the Saved Second Grid to the First Grid</li>
+            <li>Machine Displays Two Directional Arrows Around the First Grid</li>
+            <ul>
+              <li>~Player Orients Grid~Player Confirms Their Orientation</li>
+              <li>~Player Orients Grid~Player Confirms Their Orientation</li>
+            </ul>
+            <li>Machine Removes the Directional Arrows Around the First Grid</li>
+            <li>Machine Saves Orientation of First Grid</li>
+            <li>Machine Displays Two Directional Arrows Around the Second Grid</li>
+            <ul>
+              <li>~Player Orients Grid</li>
+              <li>~Player Confirms Their Orientation</li>
+            </ul>
+            <li>Machine Removes the Directional Arrows Around the Second Grid</li>
+            <li>Grid Selection Screen Disappears</li>
+          </ul>
+
+          <b>Create Power Disc</b>
+          <ul>
+            <li>Machine Calls the "Create Power Disc" Function</li>
+            <li>Machine Identifies the player who played the card</li>
+            <li>Machine Identifies the location of that players C-Bot</li>
+            <li>This could either be done by keeping the location of each C-bot in a global variable</li>
+          </ul>
+
+          <b>Machine Checks how many Power Discs are on the C-Bot</b>
+          <ul>
+            <li>If the C-bot has 4, (We need to figure out which of these to do)</li>
+            <ul>
+              <li>Choose the Next Robot on the stack, and repeat until an empty robot is found</li>
+              <li>If no robot is found, the Disc is placed on a random other hex neighbooring the middle hex.</li>
+            </ul>
+            <li>Else, It places on on the C-Bot</li>
+          </ul>
+
+          <b>Draw a Card</b>
+          <ul>
+            <li>Machine Calls the "Draw a Card" Function</li>
+            <li>Machine calls the current players number</li>
+            <li>Machine creates a random number</li>
+            <li>Machine adds a corresponding card to that players hand</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="container">
+        <b>Standard UI Functionality</b>
+
+        <p>
+          <b>Display Hand Function</b>
+          <ul>
+            <li>~Player clicks a button on the UI to view their deck</li>
+            <li>Machine Displays the Deck Window</li>
+            <ul>
+              <li>->	Machine Calls a list from </li>
+              <li>A variable or</li>
+              <li>A list File</li>
+            </ul>
+            <li>A list of all the cards in the players hand</li>
+            <ul>
+              <li>->	Render the cards individually, in a cascade X wide x Y tall collumn of cards</li>
+              <li>-> 	Cards all have graphics displaying what action it is</li>
+            </ul>
+            <li>Clicking on a card displays the information about said card</li>
+            <li>~Player clicks the UI Icon again to return to the previous screen</li>
+            <li>Machine Removes the Deck Window</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="container">
+        <p>The following are flow charts that describe actions</p>
+
+        <h4>Destroy Hex</h4>
+        <img src="resources/DestoryHex.png" alt="destroy hex">
+
+        <h4>Double Warp</h4>
+        <img src="resources/DoubleWarp.png" alt="double warp">
+
+        <h4>Warp Grid</h4>
+        <img src="resources/WarpGrid.png" alt="warp grid">
       </div>
     </div>
 
