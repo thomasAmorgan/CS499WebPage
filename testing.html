@@ -57,85 +57,88 @@
       </div>
     </nav>
 
-    <h1>Test Plan</h1>
-    <h3>Scope</h3>
-    	For each test, test in:
-    	<ul>
-    		<li>Chrome</li>
-    		<li>Firefox</li>
-    		<li>Internet Explorer</li>
-    		<li>Microsoft Edge</li>
-    	</ul>
-    	For each test, test with grid size:
-    	<ul>
-    		<li>20</li>
-    		<li>30</li>
-    		<li>60</li>
-    	</ul>
+    <div class="container">
+      <h1>Test Plan</h1>
+      <h3>Scope</h3>
+      	For each test, test in:
+      	<ul>
+      		<li>Chrome</li>
+      		<li>Firefox</li>
+      		<li>Internet Explorer</li>
+      		<li>Microsoft Edge</li>
+      	</ul>
+      	For each test, test with grid size:
+      	<ul>
+      		<li>20</li>
+      		<li>30</li>
+      		<li>60</li>
+      	</ul>
 
-    <h3>Section 1: Individual functionality testing</h3>
-    	Place Grid
-    	<ul>
-    		<li>Test: Place a grid on a valid hex.</li>
-    		<li>Test: Attempt to place a grid on an invalid and unfilled hex (edge of screen)</li>
-    		<li>Test: Place a grid on a valid hex. Attempt to place a grid on top of the first grid.</li>
-    		<li>Test: Place grids all alongside the edges of the screen.</li>
-    		<li>Test: Fill up the screen with grids.</li>
-    	</ul>
-    	Swap Grid
-    	<ul>
-    		<li>Test: Attempt to select an invalid (untiled) hex.</li>
-    		<li>Test: Attempt to swap two validly placed grids.</li>
-    		<li>Test: Select a grid, then deselect the grid.</li>
-    		<li>Test: After selecting and deselecting a grid, reselect the same grid and attempt to swap with another grid.</li>
-    		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to swap with the originally deselected grid.</li>
-    		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to swap with a third, yet-untouched grid.</li>
-    		<li>Test: Place two grids. Attempt to switch them, then switch them back to their starting positions.</li>
-    		<li>Test: Place three grids. Attempt to swap grid 1 with grid 2, grid 2 with grid 3, and grid 3 with grid 1.</li>
-    		<li>Test: Place four grids, one along each border outside of the screen. Attempt to switch them in any order.</li>
-    		<li>Test: Place four grids, one in each corner of the screen. Attempt to switch them in any order.</li>
-    	</ul>
-    	Move Grid
-    	<ul>
-    		<li>Test: Attempt to select an invalid (untiled) hex.</li>
-    		<li>Test: Place two grids, and attempt to move grid 1 to a valid hex outside of grid 2.</li>
-    		<li>Test: Place two grids, and attempt to move grid 1 to an invalid hex.</li>
-    		<li>Test: Select a grid, then deselect the grid.</li>
-    		<li>Test: After selecting and deselecting a grid, reselect the same grid and attempt to move it to a valid location.</li>
-    		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to move it to a valid location.</li>
-    		<li>Test: Move a grid to a valid location, then attempt to move the same grid to another valid location.</li>
-    		<li>Test: Move a grid to a valid location, then attempt to move a different grid to a valid location.</li>
-    		<li>Test: Place a grid where a moved grid would be allowed to be placed in a corner. Attempt to move a grid into the corner. Do this for each corner.</li>
-    	</ul>
-    	Rotate Grid
-    	<ul>
-    		<li>Test: Attempt to rotate an invalid (untiled) hex.</li>
-    		<li>Test: Attempt to rotate a grid.</li>
-    		<li>Test: Attempt to rotate a grid on each edge of the screen.</li>
-    		<li>Test: Attempt to rotate a grid in each corner of the screen.</li>
-    	</ul>
+      <h3>Section 1: Individual functionality testing</h3>
+      	Place Grid
+      	<ul>
+      		<li>Test: Place a grid on a valid hex.</li>
+      		<li>Test: Attempt to place a grid on an invalid and unfilled hex (edge of screen)</li>
+      		<li>Test: Place a grid on a valid hex. Attempt to place a grid on top of the first grid.</li>
+      		<li>Test: Place grids all alongside the edges of the screen.</li>
+      		<li>Test: Fill up the screen with grids.</li>
+      	</ul>
+      	Swap Grid
+      	<ul>
+      		<li>Test: Attempt to select an invalid (untiled) hex.</li>
+      		<li>Test: Attempt to swap two validly placed grids.</li>
+      		<li>Test: Select a grid, then deselect the grid.</li>
+      		<li>Test: After selecting and deselecting a grid, reselect the same grid and attempt to swap with another grid.</li>
+      		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to swap with the originally deselected grid.</li>
+      		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to swap with a third, yet-untouched grid.</li>
+      		<li>Test: Place two grids. Attempt to switch them, then switch them back to their starting positions.</li>
+      		<li>Test: Place three grids. Attempt to swap grid 1 with grid 2, grid 2 with grid 3, and grid 3 with grid 1.</li>
+      		<li>Test: Place four grids, one along each border outside of the screen. Attempt to switch them in any order.</li>
+      		<li>Test: Place four grids, one in each corner of the screen. Attempt to switch them in any order.</li>
+      	</ul>
+      	Move Grid
+      	<ul>
+      		<li>Test: Attempt to select an invalid (untiled) hex.</li>
+      		<li>Test: Place two grids, and attempt to move grid 1 to a valid hex outside of grid 2.</li>
+      		<li>Test: Place two grids, and attempt to move grid 1 to an invalid hex.</li>
+      		<li>Test: Select a grid, then deselect the grid.</li>
+      		<li>Test: After selecting and deselecting a grid, reselect the same grid and attempt to move it to a valid location.</li>
+      		<li>Test: After selecting and deselecting a grid, select a different grid and attempt to move it to a valid location.</li>
+      		<li>Test: Move a grid to a valid location, then attempt to move the same grid to another valid location.</li>
+      		<li>Test: Move a grid to a valid location, then attempt to move a different grid to a valid location.</li>
+      		<li>Test: Place a grid where a moved grid would be allowed to be placed in a corner. Attempt to move a grid into the corner. Do this for each corner.</li>
+      	</ul>
+      	Rotate Grid
+      	<ul>
+      		<li>Test: Attempt to rotate an invalid (untiled) hex.</li>
+      		<li>Test: Attempt to rotate a grid.</li>
+      		<li>Test: Attempt to rotate a grid on each edge of the screen.</li>
+      		<li>Test: Attempt to rotate a grid in each corner of the screen.</li>
+      	</ul>
 
-    <h3>Section 2: Integrated functionality testing</h3>
-    	S = Swap Grid
-    	<br>
-    	M = Move Grid
-    	<br>
-    	R = Rotate Grid
-    	<br>
-    	Test several action sequences as specified, using a mixture of boundary and middle cases:
-    	<ul>
-    		<li>S-M-R</li>
-    		<li>S-R-M</li>
-    		<li>M-S-R</li>
-    		<li>M-R-S</li>
-    		<li>R-S-M</li>
-    		<li>R-M-S</li>
-    		<li>S-M-R-S-M-R-S-M-R</li>
-    		<li>S-S-S-M-M-M-R-R-R</li>
-    		<li>Sx30</li>
-    		<li>Mx30</li>
-    		<li>Rx30</li>
-    		<li>Random sequence with at least 30 steps</li>
-    	</ul>
+      <h3>Section 2: Integrated functionality testing</h3>
+      	S = Swap Grid
+      	<br>
+      	M = Move Grid
+      	<br>
+      	R = Rotate Grid
+      	<br>
+      	Test several action sequences as specified, using a mixture of boundary and middle cases:
+      	<ul>
+      		<li>S-M-R</li>
+      		<li>S-R-M</li>
+      		<li>M-S-R</li>
+      		<li>M-R-S</li>
+      		<li>R-S-M</li>
+      		<li>R-M-S</li>
+      		<li>S-M-R-S-M-R-S-M-R</li>
+      		<li>S-S-S-M-M-M-R-R-R</li>
+      		<li>Sx30</li>
+      		<li>Mx30</li>
+      		<li>Rx30</li>
+      		<li>Random sequence with at least 30 steps</li>
+      	</ul>
+    </div>
+
   </body>
 </html>
