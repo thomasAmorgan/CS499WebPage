@@ -64,19 +64,19 @@
         <li>
           <h4>Issues/Problems During Implementation</h4>
           <p>
-
+            The biggest issue we had during implementation was getting the grid to function correctly. Our initial method of using Honeycomb for our grid system was not working properly and the grid was the most important part of the project. To continue we needed it to be functioning perfectly. We switched to PIXI.js and that helped us move forward. After being stuck for a couple weeks and feeling really behind on the overall project, finding PIXI.js allowed to get over that hurdle and move on.
           </p>
         </li>
         <li>
           <h4>Changes to Design Necessary During Implementation</h4>
           <p>
-
+            The original game that we were trying to recreate is a very dynamic one. One of the major aspects of it is the adjustable board. The board is built of hex grids that the players piece together at the beginning of gameplay, meaning it can be laid out however the players can imagine. This had to be restricted to some degree in our implementation of the game. On a computer screen it simply wasn't practical for us at this stage to allow for any possible board set up. For example, it should be possible in the orginal game for the players to align the hex grids into a straight line, meaning a board that is dozens of hexes across and only a few hexes high. On a computer screen that simply doesn't work. So our hex grid was limited by the size of our grid on the screen and the player cannot place a hex grid outside of that field. In the future, it could be adjusted so that the grid area is wider and the players could perhaps drag across and zoom in on the grid, but at the stage we reached in development, that was not a realistic design element to implement.
           </p>
         </li>
         <li>
           <h4>Restrictions/Limitations</h4>
           <p>
-
+            One of the limitations we had in the game design was what to do about the wild warp card. The wild warp card allows a player to reverse the effect of any other action in the game or act as any otjer card. The problem with implementing this card in a digital game is that the player needs to be able to play this at any time in the game. This would require prompting the player between every action in the game to see if they want to use this card, which creates pacing issues and adds complexity that damages the user experience. So moving forward in the game development this card will need to be either removed or adjusted in some way to simplify it and remove the issues associated with it.
           </p>
         </li>
       </ul>
